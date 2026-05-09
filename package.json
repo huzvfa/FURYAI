@@ -1,0 +1,21 @@
+{
+  "name": "ai-orchestrator",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "api",
+    "client",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=api\" \"npm run dev --workspace=client\"",
+    "build": "npm run build --workspaces",
+    "lint": "eslint .",
+    "docker:up": "docker-compose up -d"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "eslint": "^8.57.0",
+    "turbo": "^1.12.0"
+  }
+}
